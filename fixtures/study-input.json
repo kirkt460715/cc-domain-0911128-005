@@ -1,0 +1,1657 @@
+{
+  "snapshots": [
+    {
+      "id": "local-network-v1",
+      "document": {
+        "version": 1,
+        "nodes": [
+          {
+            "id": "A",
+            "region": "east",
+            "rural": false
+          },
+          {
+            "id": "B",
+            "region": "east",
+            "rural": false
+          },
+          {
+            "id": "C",
+            "region": "east",
+            "rural": false
+          },
+          {
+            "id": "D",
+            "region": "west",
+            "rural": true
+          },
+          {
+            "id": "E",
+            "region": "west",
+            "rural": true
+          },
+          {
+            "id": "F",
+            "region": "west",
+            "rural": true
+          }
+        ],
+        "edges": [
+          {
+            "id": "AB",
+            "from": "A",
+            "to": "B",
+            "metres": 100,
+            "delay_seconds": 0,
+            "steps": 0,
+            "slope_permille": 0,
+            "closed": false,
+            "profiles": [
+              "walk",
+              "wheel"
+            ]
+          },
+          {
+            "id": "BA",
+            "from": "B",
+            "to": "A",
+            "metres": 100,
+            "delay_seconds": 0,
+            "steps": 0,
+            "slope_permille": 0,
+            "closed": false,
+            "profiles": [
+              "walk",
+              "wheel"
+            ]
+          },
+          {
+            "id": "BC",
+            "from": "B",
+            "to": "C",
+            "metres": 100,
+            "delay_seconds": 0,
+            "steps": 0,
+            "slope_permille": 0,
+            "closed": false,
+            "profiles": [
+              "walk",
+              "wheel"
+            ]
+          },
+          {
+            "id": "CB",
+            "from": "C",
+            "to": "B",
+            "metres": 100,
+            "delay_seconds": 0,
+            "steps": 0,
+            "slope_permille": 0,
+            "closed": false,
+            "profiles": [
+              "walk",
+              "wheel"
+            ]
+          },
+          {
+            "id": "CD",
+            "from": "C",
+            "to": "D",
+            "metres": 100,
+            "delay_seconds": 0,
+            "steps": 0,
+            "slope_permille": 0,
+            "closed": false,
+            "profiles": [
+              "walk",
+              "wheel"
+            ]
+          },
+          {
+            "id": "DC",
+            "from": "D",
+            "to": "C",
+            "metres": 100,
+            "delay_seconds": 0,
+            "steps": 0,
+            "slope_permille": 0,
+            "closed": false,
+            "profiles": [
+              "walk",
+              "wheel"
+            ]
+          },
+          {
+            "id": "DE",
+            "from": "D",
+            "to": "E",
+            "metres": 100,
+            "delay_seconds": 0,
+            "steps": 0,
+            "slope_permille": 0,
+            "closed": false,
+            "profiles": [
+              "walk",
+              "wheel"
+            ]
+          },
+          {
+            "id": "ED",
+            "from": "E",
+            "to": "D",
+            "metres": 100,
+            "delay_seconds": 0,
+            "steps": 0,
+            "slope_permille": 0,
+            "closed": false,
+            "profiles": [
+              "walk",
+              "wheel"
+            ]
+          },
+          {
+            "id": "AD",
+            "from": "A",
+            "to": "D",
+            "metres": 200,
+            "delay_seconds": 0,
+            "steps": 0,
+            "slope_permille": 0,
+            "closed": false,
+            "profiles": [
+              "walk",
+              "wheel"
+            ]
+          },
+          {
+            "id": "DA",
+            "from": "D",
+            "to": "A",
+            "metres": 200,
+            "delay_seconds": 0,
+            "steps": 0,
+            "slope_permille": 0,
+            "closed": false,
+            "profiles": [
+              "walk",
+              "wheel"
+            ]
+          },
+          {
+            "id": "AC",
+            "from": "A",
+            "to": "C",
+            "metres": 50,
+            "delay_seconds": 0,
+            "steps": 3,
+            "slope_permille": 0,
+            "closed": false,
+            "profiles": [
+              "walk",
+              "wheel"
+            ]
+          },
+          {
+            "id": "CA",
+            "from": "C",
+            "to": "A",
+            "metres": 50,
+            "delay_seconds": 0,
+            "steps": 3,
+            "slope_permille": 0,
+            "closed": false,
+            "profiles": [
+              "walk",
+              "wheel"
+            ]
+          }
+        ],
+        "profiles": [
+          {
+            "id": "walk",
+            "seconds_per_km": 1000,
+            "step_free": false,
+            "max_slope_permille": 100,
+            "max_seconds": 300,
+            "decay": [
+              {
+                "seconds": 100,
+                "weight_ppm": 1000000
+              },
+              {
+                "seconds": 200,
+                "weight_ppm": 500000
+              },
+              {
+                "seconds": 300,
+                "weight_ppm": 250000
+              }
+            ]
+          },
+          {
+            "id": "wheel",
+            "seconds_per_km": 2000,
+            "step_free": true,
+            "max_slope_permille": 30,
+            "max_seconds": 500,
+            "decay": [
+              {
+                "seconds": 200,
+                "weight_ppm": 1000000
+              },
+              {
+                "seconds": 500,
+                "weight_ppm": 500000
+              }
+            ]
+          }
+        ],
+        "communities": [
+          {
+            "id": "elder-wheel",
+            "node": "A",
+            "profile": "wheel",
+            "service": "elder",
+            "demand": 8,
+            "priority": 2,
+            "max_fee_cents": 1000
+          },
+          {
+            "id": "elder-walk",
+            "node": "B",
+            "profile": "walk",
+            "service": "elder",
+            "demand": 6,
+            "priority": 1,
+            "max_fee_cents": 1000
+          },
+          {
+            "id": "nursery",
+            "node": "A",
+            "profile": "walk",
+            "service": "nursery",
+            "demand": 4,
+            "priority": 1,
+            "max_fee_cents": 1000
+          },
+          {
+            "id": "isolated",
+            "node": "F",
+            "profile": "walk",
+            "service": "elder",
+            "demand": 2,
+            "priority": 1,
+            "max_fee_cents": 1000
+          }
+        ],
+        "facilities": [
+          {
+            "id": "elder-hub",
+            "node": "D",
+            "service": "elder",
+            "capacity": 10,
+            "fee_cents": 500,
+            "profiles": [
+              "walk",
+              "wheel"
+            ],
+            "open": true,
+            "pool": "hub"
+          },
+          {
+            "id": "elder-mirror",
+            "node": "C",
+            "service": "elder",
+            "capacity": 10,
+            "fee_cents": 500,
+            "profiles": [
+              "walk",
+              "wheel"
+            ],
+            "open": true,
+            "pool": "hub"
+          },
+          {
+            "id": "nursery-hub",
+            "node": "C",
+            "service": "nursery",
+            "capacity": 10,
+            "fee_cents": 500,
+            "profiles": [
+              "walk",
+              "wheel"
+            ],
+            "open": true,
+            "pool": "hub"
+          },
+          {
+            "id": "remote",
+            "node": "E",
+            "service": "elder",
+            "capacity": 4,
+            "fee_cents": 500,
+            "profiles": [
+              "walk",
+              "wheel"
+            ],
+            "open": true,
+            "pool": "remote"
+          }
+        ]
+      }
+    }
+  ],
+  "choices": [
+    {
+      "id": "booking-0",
+      "household": "family-0",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-01T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-1",
+      "household": "family-1",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-02T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-2",
+      "household": "family-2",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-03T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-3",
+      "household": "family-3",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-04T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-4",
+      "household": "family-4",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-05T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-5",
+      "household": "family-5",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-06T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-6",
+      "household": "family-6",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-07T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-7",
+      "household": "family-7",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-08T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-8",
+      "household": "family-8",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-09T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-9",
+      "household": "family-9",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-10T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-10",
+      "household": "family-10",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-11T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-11",
+      "household": "family-11",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-12T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-12",
+      "household": "family-12",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-13T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-13",
+      "household": "family-13",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-14T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-14",
+      "household": "family-14",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-15T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-15",
+      "household": "family-15",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-16T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-16",
+      "household": "family-16",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-17T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-17",
+      "household": "family-17",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-18T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-18",
+      "household": "family-18",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-19T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-19",
+      "household": "family-19",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-20T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-20",
+      "household": "family-20",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-21T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-21",
+      "household": "family-21",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-22T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-22",
+      "household": "family-22",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-23T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-23",
+      "household": "family-23",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-24T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-24",
+      "household": "family-24",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-25T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-25",
+      "household": "family-25",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-26T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-26",
+      "household": "family-26",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-27T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-27",
+      "household": "family-27",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-28T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-28",
+      "household": "family-28",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-01T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-29",
+      "household": "family-29",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-02T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-30",
+      "household": "family-30",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-03T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-31",
+      "household": "family-31",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-04T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-32",
+      "household": "family-0",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-05T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-33",
+      "household": "family-1",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-06T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-34",
+      "household": "family-2",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-07T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-35",
+      "household": "family-3",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-08T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-36",
+      "household": "family-4",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-09T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-37",
+      "household": "family-5",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-10T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-38",
+      "household": "family-6",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-11T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-39",
+      "household": "family-7",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-12T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-40",
+      "household": "family-8",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-13T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-41",
+      "household": "family-9",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-14T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-42",
+      "household": "family-10",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-15T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-43",
+      "household": "family-11",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-16T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-44",
+      "household": "family-12",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-17T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-45",
+      "household": "family-13",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-18T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-46",
+      "household": "family-14",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-19T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-47",
+      "household": "family-15",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-20T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-48",
+      "household": "family-16",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-21T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-49",
+      "household": "family-17",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-22T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-50",
+      "household": "family-18",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-23T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-51",
+      "household": "family-19",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-24T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-52",
+      "household": "family-20",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-25T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-53",
+      "household": "family-21",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-26T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-54",
+      "household": "family-22",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-27T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-55",
+      "household": "family-23",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-28T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-56",
+      "household": "family-24",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-01T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-57",
+      "household": "family-25",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-02T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-58",
+      "household": "family-26",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-03T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-59",
+      "household": "family-27",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-04T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-60",
+      "household": "family-28",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-05T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-61",
+      "household": "family-29",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-06T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-62",
+      "household": "family-30",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-07T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-63",
+      "household": "family-31",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-08T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-64",
+      "household": "family-0",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-09T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-65",
+      "household": "family-1",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-10T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-66",
+      "household": "family-2",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-11T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-67",
+      "household": "family-3",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-12T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-68",
+      "household": "family-4",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-13T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-69",
+      "household": "family-5",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-14T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-70",
+      "household": "family-6",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-15T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-71",
+      "household": "family-7",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-16T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-72",
+      "household": "family-8",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-17T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-73",
+      "household": "family-9",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-18T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-74",
+      "household": "family-10",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-19T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-75",
+      "household": "family-11",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-20T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-76",
+      "household": "family-12",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-21T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-77",
+      "household": "family-13",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-22T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-78",
+      "household": "family-14",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-23T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-79",
+      "household": "family-15",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-24T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-80",
+      "household": "family-16",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-25T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-81",
+      "household": "family-17",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-26T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-82",
+      "household": "family-18",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-27T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-83",
+      "household": "family-19",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-28T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-84",
+      "household": "family-20",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-01T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-85",
+      "household": "family-21",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-02T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-86",
+      "household": "family-22",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-03T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-87",
+      "household": "family-23",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-04T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-88",
+      "household": "family-24",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-05T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-89",
+      "household": "family-25",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-06T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-90",
+      "household": "family-26",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-07T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-91",
+      "household": "family-27",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-08T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-92",
+      "household": "family-28",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-09T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-93",
+      "household": "family-29",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-10T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-94",
+      "household": "family-30",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-11T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-95",
+      "household": "family-31",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-12T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-96",
+      "household": "family-0",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-13T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-97",
+      "household": "family-1",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-14T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-98",
+      "household": "family-2",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-15T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-99",
+      "household": "family-3",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-16T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-100",
+      "household": "family-4",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-17T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-101",
+      "household": "family-5",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-18T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-102",
+      "household": "family-6",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-19T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-103",
+      "household": "family-7",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-20T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-104",
+      "household": "family-8",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-21T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-105",
+      "household": "family-9",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-22T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-106",
+      "household": "family-10",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-23T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-107",
+      "household": "family-11",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-24T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-108",
+      "household": "family-12",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-25T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-109",
+      "household": "family-13",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-26T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-110",
+      "household": "family-14",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-27T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-111",
+      "household": "family-15",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-28T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-112",
+      "household": "family-16",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-01T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-113",
+      "household": "family-17",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-02T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-114",
+      "household": "family-18",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-03T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-115",
+      "household": "family-19",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-04T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-116",
+      "household": "family-20",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-05T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-117",
+      "household": "family-21",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-06T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-118",
+      "household": "family-22",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-07T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-119",
+      "household": "family-23",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-08T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-120",
+      "household": "family-24",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-09T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-121",
+      "household": "family-25",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-10T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-122",
+      "household": "family-26",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-11T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-123",
+      "household": "family-27",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-12T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-124",
+      "household": "family-28",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-13T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-125",
+      "household": "family-29",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-14T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-126",
+      "household": "family-30",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-15T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-127",
+      "household": "family-31",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-16T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-128",
+      "household": "family-0",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-17T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-129",
+      "household": "family-1",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-18T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-130",
+      "household": "family-2",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-19T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-131",
+      "household": "family-3",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-20T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-132",
+      "household": "family-4",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-21T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-133",
+      "household": "family-5",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-22T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-134",
+      "household": "family-6",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-23T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-135",
+      "household": "family-7",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-24T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-136",
+      "household": "family-8",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-25T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-137",
+      "household": "family-9",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-26T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-138",
+      "household": "family-10",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-27T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-139",
+      "household": "family-11",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-28T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-140",
+      "household": "family-12",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-01T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-141",
+      "household": "family-13",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-02T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-142",
+      "household": "family-14",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-03T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-143",
+      "household": "family-15",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-04T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-144",
+      "household": "family-16",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-05T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-145",
+      "household": "family-17",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-06T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-146",
+      "household": "family-18",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-07T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-147",
+      "household": "family-19",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-08T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-148",
+      "household": "family-20",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-09T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-149",
+      "household": "family-21",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-10T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-150",
+      "household": "family-22",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-11T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-151",
+      "household": "family-23",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-12T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-152",
+      "household": "family-24",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-13T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-153",
+      "household": "family-25",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-14T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-154",
+      "household": "family-26",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-15T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-155",
+      "household": "family-27",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-16T09:00:00Z",
+      "chosen": null
+    },
+    {
+      "id": "booking-156",
+      "household": "family-28",
+      "community": "elder-wheel",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-17T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-157",
+      "household": "family-29",
+      "community": "elder-walk",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-18T09:00:00Z",
+      "chosen": "elder-mirror"
+    },
+    {
+      "id": "booking-158",
+      "household": "family-30",
+      "community": "nursery",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-19T09:00:00Z",
+      "chosen": "nursery-hub"
+    },
+    {
+      "id": "booking-159",
+      "household": "family-31",
+      "community": "isolated",
+      "snapshot": "local-network-v1",
+      "requested_at": "2026-10-20T09:00:00Z",
+      "chosen": null
+    }
+  ],
+  "facility_attributes": [
+    {
+      "facility": "elder-hub",
+      "covered_seats": 10,
+      "has_shelter": 1
+    },
+    {
+      "facility": "elder-mirror",
+      "covered_seats": 10,
+      "has_shelter": 0
+    },
+    {
+      "facility": "nursery-hub",
+      "covered_seats": 10,
+      "has_shelter": 1
+    },
+    {
+      "facility": "remote",
+      "covered_seats": 4,
+      "has_shelter": 0
+    }
+  ],
+  "study": {
+    "seed": 41128,
+    "regularization": [
+      0.01,
+      0.1,
+      1
+    ],
+    "family_folds": 4
+  }
+}
